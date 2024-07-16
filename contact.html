@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/assest/css/style.css">
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <title>Puneet Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="/assest/images/favicon.ico">
+</head>
+
+<body>
+    <div id="preloader"></div>
+
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo"><img src="/assest/images/photo.png" alt=""></a>
+            <ul class="links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/index.html#experience">Experience</a></li>
+                <li><a href="/MyPorjects.html">My Projects</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+            <!-- Dot Menu -->
+            <div class="toogle_btn">
+                <i class="fa-solid fa-ellipsis"></i>
+            </div>
+        </div>
+
+        <!-- Drop Menu -->
+        <div class="dropdown_menu">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/index.html#experience">Experience</a></li>
+            <li><a href="/MyPorjects.html">My Projects</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </div>
+
+        <div id="contact">
+            <h1>Have you any Questions ?</h1>
+            <h2>I'M AT YOUR SERVICE</h2>
+
+            <div class="contact_links">
+                <div class="contact-info-item" onclick="window.location.href='tel:+919588746232'">
+                    <div class="icon">
+                        <i class="fa fa-phone fa-xl"></i>
+                        <h4>Call Me On</h4>
+                        <p>+91-9588746232</p>
+                    </div>
+                </div>
+                <div class="contact-info-item" onclick="window.location.href='mailto:puneetyadav.pv@gmail.com'">
+                    <div class="icon">
+                        <i class="fa fa-envelope fa-xl"></i>
+                        <h4>Email</h4>
+                        <p>puneetyadav.pv@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-info-item" onclick="window.location.href='https\://github.com/puneetyadav09/'">
+                    <div class="icon">
+                        <i class="fa fa-brands fa-github fa-xl"></i>
+                        <h4>GitHub</h4>
+                        <p>puneetyadav09</p>
+                    </div>
+                </div>
+                <div class="contact-info-item" onclick="window.location.href='https\://linkedin.com/in/puneetyadav09'">
+                    <div class="icon">
+                        <i class="fa fa-brands fa-linkedin fa-xl"></i>
+                        <h4>LinkedIn</h4>
+                        <p>puneetyadav09</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>SEND ME AN EMAIL</h3>
+            <p class="message">I'M VERY RESPOSIVE TO MESSAGES</p>
+
+            <div class="contact_form">
+                <div class="row">
+                    <div class="col-6">
+                        <input type="text" placeholder="Name" id="name">
+                    </div>
+                    <div class="col-6">
+                        <input type="email" placeholder="Email" id="email">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <input type="text" placeholder="Subject" id="subject">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <textarea name="message" id="message" placeholder="Message"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <button type="submit" class="btn" id="send">Send Message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+        import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "",
+            authDomain: "",
+            projectId: "",
+            storageBucket: "",
+            messagingSenderId: "",
+            appId: "",
+            measurementId: ""
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app)
+
+        document.getElementById("send").addEventListener('click', (e) => {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var subject = document.getElementById("subject").value;
+            var message = document.getElementById("message").value;
+
+            email = email.split('@')[0];
+
+            set(ref(db, 'user/' + email), {
+                name: name,
+                email: email,
+                subject: subject,
+                message: message
+            })
+
+            alert("Message Sent");
+
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("subject").value = "";
+            document.getElementById("message").value = "";
+        })
+    </script>
+    <script src="/assest/js/app.js"></script>
+</body>
+
+</html>

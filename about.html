@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/assest/css/style.css">
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <title>Puneet Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="/assest/images/favicon.ico">
+</head>
+
+<body>
+    <div id="preloader"></div>
+
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo"><img src="/assest/images/photo.png" alt=""></a>
+            <ul class="links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/index.html#experience">Experience</a></li>
+                <li><a href="/MyPorjects.html">My Projects</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+
+            <!-- Dot Menu -->
+            <div class="toogle_btn">
+                <i class="fa-solid fa-ellipsis"></i>
+            </div>
+        </div>
+
+        <!-- Drop Menu -->
+        <div class="dropdown_menu">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/index.html#experience">Experience</a></li>
+            <li><a href="/MyPorjects.html">My Projects</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+        </div>
+
+        <div id="about">
+            <h1>About Me</h1>
+            <div class="about">
+                <div class="image">
+                    <img src="/assest/images/ibm.jpg" alt="photo">
+                </div>
+                <div class="rightContent">
+                    <h2>Hi, I'm Puneet, A passionate software developer</h2>
+                    <p>I am an enthusiastic software developer with a keen interest in Software Development. Currently,
+                        I am pursuing my Bachelor's degree in Computer Science and Engineering specialization in
+                        Artificial Intelligence and Machine Learning at Chandigarh University. My academic journey has
+                        equipped me with a solid foundation in programming languages such as Java, Python, JavaScript,
+                        and many other new technologies and I am eager to apply this knowledge in real-world projects.
+                        <br>
+                        My experience includes working on various academic and personal projects that have helped me
+                        develop my skills in Java, Spring, JavaScript. I am always excited to learn new things and take
+                        on challenging projects that push me to grow as a developer.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="skills">
+            <h1>Professional Skills</h1>
+
+            <div id="tech-stack-main">
+                <div class="ts-text">
+                    <div class="ts active">
+                        <p onclick="changeTechStack('languages')">Languages</p>
+                    </div>
+                    <div class="ts">
+                        <p onclick="changeTechStack('tools')">Tools Used</p>
+                    </div>
+                </div>
+
+                <div class="ts-img activeImg">
+                    <img src="/assest/images/tech/java.png" alt="java" loading="lazy">
+                    <img src="/assest/images/tech/python.png" alt="python" loading="lazy">
+                    <img src="/assest/images/tech/html.png" alt="html" loading="lazy">
+                    <img src="/assest/images/tech/css.png" alt="css" loading="lazy">
+                    <img src="/assest/images/tech/js.png" alt="javascript" loading="lazy">
+                </div>
+
+                <div class="ts-img">
+                    <img src="/assest/images/tech/intellij.png" alt="intellij" loading="lazy">
+                    <img src="/assest/images/tech/pycharm.png" alt="pycharm" loading="lazy">
+                    <img src="/assest/images/tech/vscode.png" alt="vscode" loading="lazy">
+                    <img src="/assest/images/tech/mysql.png" alt="sql" loading="lazy">
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </header>
+
+    <script src="/assest/js/app.js"></script>
+</body>
+
+</html>
